@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -10,6 +11,9 @@ namespace DefaultNamespace
 
         [SerializeField] 
         private int _moneyPerHit = 5;
+
+        [SerializeField]
+        private TextMeshPro _moneyText;
         
         public float Health = 100f;
         public int Money = 100;
@@ -24,6 +28,13 @@ namespace DefaultNamespace
             else {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            var money = Money;
+            AddMoney(-money);
+            AddMoney(money);
         }
 
         private void OnDestroy()
@@ -43,7 +54,7 @@ namespace DefaultNamespace
                 Attack();
             }
             if (walker.Happiness >= walker.SpawnThreshold) {
-                AttemptToSpawnNewWalker();
+                AttemptToSpawnNewWalker(walker);
             }
             
             AddMoney(_moneyPerHit);
@@ -57,17 +68,18 @@ namespace DefaultNamespace
             }
         }
         
-        private void AttemptToSpawnNewWalker()
+        private void AttemptToSpawnNewWalker(Walker walker)
         {
             if (_manager == null)
                 return;
 
-            _manager.SpawnWalker();
+            _manager.SpawnWalker(walker);
         }
 
         public static void AddMoney(int moneyPerHit)
         {
             Instance.Money += moneyPerHit;
+            Instance._moneyText.text = $"<sprite name=\"Money\"> {Instance.Money:N0}";
         }
 
         public static int GetMoney()

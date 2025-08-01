@@ -29,6 +29,9 @@ namespace DefaultNamespace
         private float _walkerSpawnChance = 0.5f;
         
         [SerializeField]
+        private float _happinessAddedOnSpawn = 5f;
+        
+        [SerializeField]
         private Transform _startPos;
 
         [SerializeField]
@@ -101,10 +104,13 @@ namespace DefaultNamespace
             }
         }
 
-        public void SpawnWalker()
+        public void SpawnWalker(Walker originalWalker)
         {
             if (UnityEngine.Random.value <= _walkerSpawnChance) {
-                Instantiate(_walkerPrefab, _startPos.position, Quaternion.identity, transform);
+                var instance = Instantiate(_walkerPrefab, _startPos.position, Quaternion.identity, transform);
+                if (originalWalker != null) {
+                    instance.SetHappiness(originalWalker.Happiness + _happinessAddedOnSpawn);
+                }
             }
         }
     }

@@ -9,8 +9,22 @@ namespace DefaultNamespace.Towers
         
         [SerializeField]
         private float _happinessPerHit = -0.3f;
+
+        [SerializeField]
+        private WalkerToTowerEffect _effect;
         
         protected override void HitTarget(Walker target)
+        {
+            var effect = (WalkerToTowerEffect)EffectPool.GetEffect(_effect);
+            EffectPool.RunEffect(effect, new WalkerToTowerEffectData() {
+                Walker = target,
+                Tower = this,
+                StartAtWalker = true,
+                OnComplete = HandleComplete
+            });
+        }
+
+        private void HandleComplete(Walker target, Tower tower)
         {
             Machine.AddMoney(_moneyPerHit);
             target.AddHappiness(_happinessPerHit);

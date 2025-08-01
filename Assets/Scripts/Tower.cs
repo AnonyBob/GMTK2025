@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DefaultNamespace.Towers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,7 +30,20 @@ namespace DefaultNamespace
         
         private readonly List<Walker> _targets = new List<Walker>();
         private float _timeSinceLastTick;
+        private EffectPool _effectPool;
 
+        protected EffectPool EffectPool
+        {
+            get
+            {
+                if(_effectPool == null) {
+                    _effectPool = FindFirstObjectByType<EffectPool>();
+                }
+
+                return _effectPool;
+            }
+        }
+        
         private void Update()
         {
             _timeSinceLastTick += Time.deltaTime;
