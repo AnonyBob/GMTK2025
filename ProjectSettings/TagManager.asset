@@ -50,6 +50,9 @@ TagManager:
   - name: LilGuy
     uniqueID: 2153575043
     locked: 0
+  - name: TowerArea
+    uniqueID: 2979885121
+    locked: 0
   - name: Tower
     uniqueID: 2231164349
     locked: 0

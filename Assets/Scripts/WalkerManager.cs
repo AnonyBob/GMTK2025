@@ -89,7 +89,7 @@ namespace DefaultNamespace
         {
             walker.TimeSinceHappinessUpdate += Time.deltaTime;
             if (walker.TimeSinceHappinessUpdate >= _happinessUpdateInterval) {
-                walker.Happiness += walker.HappinessUpdateAmount;
+                walker.AddHappiness(walker.HappinessUpdateAmount);
                 walker.TimeSinceHappinessUpdate = 0f;
             }
         }

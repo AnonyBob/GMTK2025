@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,7 +18,7 @@ namespace DefaultNamespace
         public float TimeSinceHappinessUpdate;
         public float HappinessUpdateAmount = -1f;
 
-        public List<Item> Items = new List<Item>();
+        //public Dictionary<ItemType, List<Item>> Items = new List<Item>();
         public List<Status> Statuses = new List<Status>();
 
         private WalkerManager _manager;
@@ -52,6 +53,46 @@ namespace DefaultNamespace
                 _manager.UnregisterWalker(this);
                 _manager = null;
             }
+        }
+
+        public void AddHappiness(float happinessPerHit)
+        {
+            Happiness += happinessPerHit;
+        }
+
+        public void AddItem(ItemType item)
+        {
+            
+        }
+        
+        public void RemoveItem(ItemType item)
+        {
+            // var existingItem = Items.FirstOrDefault(i => i.Type == item);
+            // if (existingItem != null)
+            // {
+            //     Items.Remove(existingItem);
+            // }
+        }
+        
+        public bool HasItem(ItemType item)
+        {
+            return true;
+            //return Items.Any(i => i.Type == item);
+        }
+
+        public void AddStatus(Status status)
+        {
+            Statuses.Add(status);
+        }
+        
+        public bool HasStatus(Status status)
+        {
+            return Statuses.Contains(status);
+        }
+        
+        public void RemoveStatus(Status status)
+        {
+            Statuses.Remove(status);
         }
     }
 }
