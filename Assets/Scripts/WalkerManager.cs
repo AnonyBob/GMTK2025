@@ -38,6 +38,7 @@ namespace DefaultNamespace
         private Walker _walkerPrefab;
         
         private readonly List<Walker> _walkers = new List<Walker>();
+        private readonly List<StatusInstance> _statusesToRemove = new List<StatusInstance>();
 
         private IEnumerator Start()
         {
@@ -100,8 +101,19 @@ namespace DefaultNamespace
         private void UpdateStatuses(Walker walker)
         {
             foreach (var status in walker.Statuses) {
-                status.OnUpdate(walker, Time.deltaTime);
+                status.Status.OnUpdate(walker, Time.deltaTime);
+                status.RemainingTime -= Time.deltaTime;
+
+                if (status.RemainingTime <= 0f) {
+                    _statusesToRemove.Add(status);
+                }
             }
+            
+            foreach (var status in _statusesToRemove) {
+                status.Status.OnRemoved(walker);
+                walker.Statuses.Remove(status);
+            }
+            _statusesToRemove.Clear();
         }
 
         public void SpawnWalker(Walker originalWalker)

@@ -1,8 +1,22 @@
 using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace.Statuses;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
+    public class StatusInstance
+    {
+        public Status Status;
+        public float RemainingTime;
+
+        public StatusInstance(Status status, float duration)
+        {
+            Status = status;
+            RemainingTime = duration;
+        }
+    }
+    
     public class Walker : MonoBehaviour
     {
         public Vector2 TargetPosition;
@@ -46,7 +60,7 @@ namespace DefaultNamespace
         private Color _angryColor = Color.red;
         
         public Dictionary<ItemType, List<Item>> Items = new ();
-        public List<Status> Statuses = new List<Status>();
+        public List<StatusInstance> Statuses = new List<StatusInstance>();
         private Color _startingFaceColor;
 
         private WalkerManager _manager;
@@ -130,17 +144,39 @@ namespace DefaultNamespace
 
         public void AddStatus(Status status)
         {
-            Statuses.Add(status);
+            Statuses.Add(new StatusInstance(status, status.Duration));
         }
         
         public bool HasStatus(Status status)
         {
-            return Statuses.Contains(status);
+            return Statuses.Any(s => s.Status == status);
         }
         
         public void RemoveStatus(Status status)
         {
-            Statuses.Remove(status);
+            for(var i = 0; i < Statuses.Count; i++)
+            {
+                if (Statuses[i].Status == status) {
+                    Statuses.RemoveAt(i);
+                    return;
+                }
+            }
+        }
+
+        public (float MoneyMultiplier, float HappinessMultiplier) GetMotivation()
+        {
+            var moneyMultiplier = 1f;
+            var happinessMultiplier = 1f;
+            foreach (var status in Statuses)
+            {
+                if (status.Status is MotivationStatus motivationStatus)
+                {
+                    moneyMultiplier += motivationStatus.WorkMultiplier;
+                    happinessMultiplier += motivationStatus.HappinessMultiplier;
+                }
+            }
+            
+            return (moneyMultiplier, happinessMultiplier);
         }
 
         public void SetHappiness(float happiness)

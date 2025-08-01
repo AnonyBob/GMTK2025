@@ -26,8 +26,9 @@ namespace DefaultNamespace.Towers
 
         private void HandleComplete(Walker target, Tower tower)
         {
-            Machine.AddMoney(_moneyPerHit);
-            target.AddHappiness(_happinessPerHit);
+            var (money, happiness) = target.GetMotivation();
+            Machine.AddMoney(Mathf.FloorToInt(money * _moneyPerHit));
+            target.AddHappiness(_happinessPerHit * happiness);
         }
     }
 }
