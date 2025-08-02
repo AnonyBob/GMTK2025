@@ -55,13 +55,15 @@ namespace DefaultNamespace.Towers
                 ? data.Tower.DooberAnchor.position
                 : data.Walker.transform.position;
             
-            
-            
             _animation.Play(_playClip);
             while (_animation.IsPlaying(_playClip)) {
                 transform.position = Vector3.Lerp(startPos, endPos, _moveCurve.Evaluate(_moveTime)) 
                                      + Vector3.Lerp(Vector3.zero, _offset, _offsetCurve.Evaluate(_moveTime));
                 yield return null;
+
+                if (!data.StartAtWalker) {
+                    endPos = data.Walker.transform.position;
+                }
             }
 
             data.OnComplete?.Invoke(data.Walker, data.Tower);

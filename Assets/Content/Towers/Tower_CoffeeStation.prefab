@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
       value: 3
@@ -65,6 +69,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _effect
+      value: 
+      objectReference: {fileID: 2053246161543572106, guid: 870a663b17516443d963be0c82cb033e, type: 3}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
       value: 1
       objectReference: {fileID: 0}
@@ -74,6 +82,10 @@ PrefabInstance:
       objectReference: {fileID: 3673321587940366009}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _moneyPerHit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _startAtWalker
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
@@ -141,6 +153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_CoffeeStation
       objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
       value: 3
@@ -148,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

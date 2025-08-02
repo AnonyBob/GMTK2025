@@ -119,7 +119,7 @@ namespace DefaultNamespace
         public void OnEndDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnEndDrag(eventData);
-            if (!Machine.CheckUnlocked(_tower)) {
+            if (!Machine.CheckUnlocked(_tower) || !_dragging) {
                 return;
             }
             

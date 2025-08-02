@@ -40,6 +40,9 @@ namespace DefaultNamespace
         private readonly List<Walker> _walkers = new List<Walker>();
         private readonly List<StatusInstance> _statusesToRemove = new List<StatusInstance>();
 
+        private float _averageHappiness;
+        public int NumberOfWalkers => _walkers.Count;
+
         private IEnumerator Start()
         {
             for(var i = 0; i < _startingWalkers; i++)
@@ -68,11 +71,16 @@ namespace DefaultNamespace
         
         private void Update()
         {
+            var happinessSum = 0f;
             foreach (var walker in _walkers) {
                 UpdatePosition(walker);
                 UpdateStatuses(walker);
                 UpdateHappiness(walker);
+                
+                happinessSum += walker.Happiness;
             }
+
+            _averageHappiness = happinessSum / _walkers.Count;
         }
 
         private void UpdatePosition(Walker walker)
@@ -116,14 +124,10 @@ namespace DefaultNamespace
             _statusesToRemove.Clear();
         }
 
-        public void SpawnWalker(Walker originalWalker)
+        public void SpawnWalker()
         {
-            if (UnityEngine.Random.value <= _walkerSpawnChance) {
-                var instance = Instantiate(_walkerPrefab, _startPos.position, Quaternion.identity, transform);
-                if (originalWalker != null) {
-                    instance.SetHappiness(originalWalker.Happiness + _happinessAddedOnSpawn);
-                }
-            }
+            var instance = Instantiate(_walkerPrefab, _startPos.position, Quaternion.identity, transform);
+            instance.SetHappiness(_averageHappiness + _happinessAddedOnSpawn);
         }
     }
 }

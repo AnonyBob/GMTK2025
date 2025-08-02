@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778869676481656756, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Radius
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
       value: 2.5
@@ -65,6 +69,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _effect
+      value: 
+      objectReference: {fileID: 2053246161543572106, guid: 2d6c7ec48d2d5463c846f4e0a7228293, type: 3}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
       value: 1
       objectReference: {fileID: 0}
@@ -74,6 +82,10 @@ PrefabInstance:
       objectReference: {fileID: 3673321587940366009}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _moneyPerHit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _startAtWalker
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
@@ -127,19 +139,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5450953851411506198, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Name
       value: Tower_WaterCooler
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
@@ -148,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

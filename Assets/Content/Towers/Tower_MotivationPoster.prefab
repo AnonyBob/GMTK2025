@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778869676481656756, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Radius
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,6 +65,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _effect
+      value: 
+      objectReference: {fileID: 2053246161543572106, guid: 60126e38a47464a0393f2303e97f0310, type: 3}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
       value: 2
       objectReference: {fileID: 0}
@@ -72,6 +76,10 @@ PrefabInstance:
       propertyPath: _boxCollider
       value: 
       objectReference: {fileID: 3673321587940366009}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _startAtWalker
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _finalSizeOfCollider.x
       value: 4
@@ -107,15 +115,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5450953851411506198, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Name

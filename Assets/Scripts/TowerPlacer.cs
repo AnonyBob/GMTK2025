@@ -16,10 +16,6 @@ namespace DefaultNamespace
 
         private void LateUpdate()
         {
-            if (Keyboard.current.aKey.wasPressedThisFrame) {
-                SetTowerToPlace(Instantiate(_testTower, transform));
-            }
-            
             if (_towerToPlace != null) {
                 var position = Mouse.current.position.ReadValue();
                 position = _mainCamera.ScreenToWorldPoint(position);
@@ -43,6 +39,7 @@ namespace DefaultNamespace
                 CancelTower();
             }
             
+            Machine.AddMoney(-tower.Stats.Cost);
             _towerToPlace = tower;
             _towerToPlace.PrepareForPlacing();
         }
@@ -59,6 +56,7 @@ namespace DefaultNamespace
         public void CancelTower()
         {
             if(_towerToPlace != null) {
+                Machine.AddMoney(_towerToPlace.Stats.Cost);
                 Destroy(_towerToPlace.gameObject);
                 _towerToPlace = null;
             }

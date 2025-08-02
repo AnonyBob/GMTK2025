@@ -37,6 +37,9 @@ namespace DefaultNamespace.Towers
         [SerializeField]
         private WalkerToTowerEffect _effect;
         
+        [SerializeField]
+        private bool _startAtWalker = true;
+        
         protected override bool CanHit(Walker target)
         {
             switch (_towerType) {
@@ -63,7 +66,7 @@ namespace DefaultNamespace.Towers
             EffectPool.RunEffect(effect, new WalkerToTowerEffectData() {
                 Walker = target,
                 Tower = this,
-                StartAtWalker = true,
+                StartAtWalker = _startAtWalker,
                 OnComplete = HandleComplete
             });
         }

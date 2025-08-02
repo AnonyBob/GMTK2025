@@ -29,6 +29,12 @@ namespace DefaultNamespace
         public float TimeSinceHappinessUpdate;
         public float HappinessUpdateAmount = -1f;
 
+        [field: SerializeField]
+        public Transform DooberAnchor { get; private set;  }
+
+        [SerializeField]
+        private Transform[] _itemAnchors;
+        
         [SerializeField]
         private SpriteRenderer _face;
 
@@ -64,6 +70,7 @@ namespace DefaultNamespace
         private Color _startingFaceColor;
 
         private WalkerManager _manager;
+        private int _itemAnchorIndex;
 
         private void Start()
         {
@@ -124,22 +131,36 @@ namespace DefaultNamespace
 
         public void AddItem(ItemType item)
         {
-            
+            if (!Items.TryGetValue(item, out var list)) {
+                list = new List<Item>();
+                Items[item] = list;
+            }
+
+            var itemPrefab = item.prefab;
+            var newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity, GetNextItemAnchor());
+            list.Add(newItem);
         }
-        
+
+        private Transform GetNextItemAnchor()
+        {
+            _itemAnchorIndex = (_itemAnchorIndex + 1) % _itemAnchors.Length;
+            return _itemAnchors[_itemAnchorIndex];
+        }
+
         public void RemoveItem(ItemType item)
         {
-            // var existingItem = Items.FirstOrDefault(i => i.Type == item);
-            // if (existingItem != null)
-            // {
-            //     Items.Remove(existingItem);
-            // }
+            if (!Items.TryGetValue(item, out var list) || list.Count == 0)
+                return;
+            
+            // Remove the first item of the specified type
+            var itemToRemove = list[0];
+            list.RemoveAt(0);       
+            Destroy(itemToRemove.gameObject);
         }
         
         public bool HasItem(ItemType item)
         {
-            return true;
-            //return Items.Any(i => i.Type == item);
+            return Items.TryGetValue(item, out var list) && list.Count > 0;
         }
 
         public void AddStatus(Status status)

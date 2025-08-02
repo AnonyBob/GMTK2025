@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
@@ -16,14 +18,24 @@ namespace DefaultNamespace
         private TextMeshPro _moneyText;
 
         [SerializeField]
+        private Button _hireButton;
+        
+        [SerializeField]
+        private TextMeshProUGUI _walkerCostText;
+
+        [SerializeField]
         private List<Tower> _towers;
         
         public float Health = 100f;
         public int Money = 100;
         
+        [SerializeField]
+        private AnimationCurve _costToSpawnWalkerMultiplier;
+        
         private static Machine Instance;
         private int _highestMoney;
-        
+        private int _costToSpawnWalker;
+
         private void Awake()
         {
             if (Instance == null) {
@@ -39,6 +51,14 @@ namespace DefaultNamespace
             var money = Money;
             AddMoney(-money);
             AddMoney(money);
+        }
+
+        private void Update()
+        {
+            var count = _manager.NumberOfWalkers;
+            _costToSpawnWalker = (int)_costToSpawnWalkerMultiplier.Evaluate(count);
+            _walkerCostText.text = $"<sprite name=\"Money\"> {_costToSpawnWalker:N0}";
+            _hireButton.interactable = Money >= _costToSpawnWalker;
         }
 
         private void OnDestroy()
@@ -57,9 +77,6 @@ namespace DefaultNamespace
             if (walker.Happiness < walker.AttackThreshold) {
                 Attack();
             }
-            if (walker.Happiness >= walker.SpawnThreshold) {
-                AttemptToSpawnNewWalker(walker);
-            }
             
             AddMoney(_moneyPerHit);
         }
@@ -68,16 +85,22 @@ namespace DefaultNamespace
         {
             Health--;
             if (Health <= 0f) {
-                //End Game.
+               Debug.LogError("Game Over!");
             }
         }
         
-        private void AttemptToSpawnNewWalker(Walker walker)
+        public void AttemptToSpawnNewWalker()
         {
             if (_manager == null)
                 return;
 
-            _manager.SpawnWalker(walker);
+            if (Money >= _costToSpawnWalker) {
+                _manager.SpawnWalker();  
+                AddMoney(-_costToSpawnWalker);
+            }
+            else {
+                // Show not enough money...
+            }
         }
 
         public static void AddMoney(int moneyPerHit)

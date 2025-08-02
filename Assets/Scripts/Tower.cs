@@ -150,12 +150,19 @@ namespace DefaultNamespace
 
         public void Activate()
         {
-            _animator.SetTrigger(ActivateTrigger);
+            if (_animator != null) {
+                _animator.SetTrigger(ActivateTrigger);    
+            }
         }
 
         public void Die()
         {
             _animator.SetTrigger(DeadTrigger);
+        }
+
+        public void Remove()
+        {
+            Destroy(gameObject);
         }
         
         private void Update()
@@ -226,6 +233,10 @@ namespace DefaultNamespace
         {
             if (_animator != null) {
                 _animator.SetFloat(LifeFloat, (1f * _lifeRemaining) / Stats.Life);
+            }
+
+            if (_lifeRemaining <= 0) {
+                Die();
             }
         }
     }
