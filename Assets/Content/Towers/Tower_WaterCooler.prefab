@@ -73,6 +73,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2053246161543572106, guid: 2d6c7ec48d2d5463c846f4e0a7228293, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _itemGiven
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b19c9bf8853e4c25bc683f981d4cf68, type: 2}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
       value: 1
       objectReference: {fileID: 0}

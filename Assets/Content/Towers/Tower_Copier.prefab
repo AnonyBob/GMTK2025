@@ -73,6 +73,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2053246161543572106, guid: c7f21ed2257904fd68411ca38ef17ad2, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _itemGiven
+      value: 
+      objectReference: {fileID: 11400000, guid: 395cc53b9fd7e48f3b838fe9700062ab, type: 2}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
       value: 1
       objectReference: {fileID: 0}
@@ -106,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Life
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Blurb

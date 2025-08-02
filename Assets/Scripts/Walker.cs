@@ -171,6 +171,23 @@ namespace DefaultNamespace
             
             Destroy(itemToRemove.gameObject);
         }
+
+        public void RemoveItem(Item item)
+        {
+            if (!Items.TryGetValue(item.Type, out var list)) {
+                return;
+            }
+            
+            if (list.Remove(item)) {
+                if (item.Statuses is { Length: > 0 }) {
+                    foreach(var status in item.Statuses) {
+                        RemoveStatus(status, item);
+                    }
+                }
+                
+                Destroy(item.gameObject);
+            }
+        }
         
         public bool HasItem(ItemType item)
         {
@@ -192,7 +209,10 @@ namespace DefaultNamespace
             for(var i = 0; i < Statuses.Count; i++)
             {
                 if (Statuses[i].Status == status && (fromItem == null || Statuses[i].FromItem == fromItem)) {
+                    var statusInstance = Statuses[i];
                     Statuses.RemoveAt(i);
+                    statusInstance.Status.OnRemoved(this, statusInstance);
+                    
                     return;
                 }
             }
@@ -202,12 +222,10 @@ namespace DefaultNamespace
         {
             var moneyMultiplier = 1f;
             var happinessMultiplier = 1f;
-            foreach (var status in Statuses)
-            {
-                if (status.Status is MotivationStatus motivationStatus)
-                {
-                    moneyMultiplier += motivationStatus.WorkMultiplier;
-                    happinessMultiplier += motivationStatus.HappinessMultiplier;
+            foreach (var status in Statuses) {
+                if (status.Status is MotivationStatus motivationStatus) {
+                    moneyMultiplier *= motivationStatus.WorkMultiplier;
+                    happinessMultiplier *= motivationStatus.HappinessMultiplier;
                 }
             }
             

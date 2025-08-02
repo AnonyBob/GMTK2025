@@ -109,17 +109,17 @@ namespace DefaultNamespace
         private void UpdateStatuses(Walker walker)
         {
             foreach (var status in walker.Statuses) {
-                status.Status.OnUpdate(walker, Time.deltaTime);
+                status.Status.OnUpdate(walker, status, Time.deltaTime);
                 status.RemainingTime -= Time.deltaTime;
 
-                if (status.RemainingTime <= 0f && status.Status.Duration > 0 && status.FromItem == null) {
+                if (status.RemainingTime <= 0f && status.Status.Duration > 0) {
                     _statusesToRemove.Add(status);
                 }
             }
             
             foreach (var status in _statusesToRemove) {
-                status.Status.OnRemoved(walker);
                 walker.Statuses.Remove(status);
+                status.Status.OnRemoved(walker, status);
             }
             _statusesToRemove.Clear();
         }

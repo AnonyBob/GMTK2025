@@ -7,10 +7,10 @@ namespace DefaultNamespace
     {
         public float Duration;
         
-        public abstract void OnAdded(Walker walker);
+        public abstract void OnAdded(Walker walker, StatusInstance instance);
 
-        public abstract void OnUpdate(Walker walker, float deltaTime);
+        public abstract void OnUpdate(Walker walker,  StatusInstance instance, float deltaTime);
         
-        public abstract void OnRemoved(Walker walker);
+        public abstract void OnRemoved(Walker walker,  StatusInstance instance);
     }
 }

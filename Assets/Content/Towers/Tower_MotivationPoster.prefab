@@ -69,8 +69,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2053246161543572106, guid: 60126e38a47464a0393f2303e97f0310, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _itemGiven
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b9b23fe5731b4a94a653a8b97a8d5d9, type: 2}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _towerType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _boxCollider
