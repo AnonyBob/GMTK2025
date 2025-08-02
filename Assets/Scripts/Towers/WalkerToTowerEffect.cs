@@ -49,10 +49,10 @@ namespace DefaultNamespace.Towers
         {
             var startPos = data.StartAtWalker
                 ? transform.position = data.Walker.transform.position
-                : transform.position = data.Tower.transform.position;
+                : transform.position = data.Tower.DooberAnchor.position;
             
             var endPos = data.StartAtWalker 
-                ? data.Tower.transform.position
+                ? data.Tower.DooberAnchor.position
                 : data.Walker.transform.position;
             
             

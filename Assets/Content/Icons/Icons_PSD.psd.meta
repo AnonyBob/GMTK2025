@@ -109,12 +109,12 @@ TextureImporter:
       name: HappyFace
       rect:
         serializedVersion: 2
-        x: 185
-        y: 805
-        width: 102
-        height: 102
+        x: 186
+        y: 806
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,12 +131,12 @@ TextureImporter:
       name: SadFace
       rect:
         serializedVersion: 2
-        x: 310
-        y: 805
-        width: 102
-        height: 102
+        x: 311
+        y: 806
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Money
       rect:
         serializedVersion: 2
-        x: 428
-        y: 805
-        width: 102
-        height: 102
+        x: 429
+        y: 806
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,6 +167,28 @@ TextureImporter:
       bones: []
       spriteID: a27156caff3a936d0800000000000000
       internalID: -3010194557416171734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancel
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 800
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4aea679138a47639691a46128dafcc
+      internalID: -195126600
       vertices: []
       indices: 
       edges: []
@@ -185,6 +207,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Cancel: -195126600
       HappyFace: 2898781058754182782
       Money: -3010194557416171734
       SadFace: 4811871626299018042

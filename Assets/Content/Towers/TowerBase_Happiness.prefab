@@ -96,7 +96,11 @@ MonoBehaviour:
     Blurb: 
     RunCost: 0
   <Upgrade>k__BackingField: {fileID: 0}
+  _animator: {fileID: 0}
   _attempts: 10
+  _collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
   _moneyPerHit: 0
   _happinessPerHit: 0.5
   _effect: {fileID: 2053246161543572106, guid: d401f7382cc3a4bf587d6ce7a8de4dbd, type: 3}
