@@ -8,9 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17700438734521871, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 17700438734521871, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449278255338494743, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _shadowOffset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 449278255338494743, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _shadowOffset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 773899935371520993, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 773899935371520993, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1778869676481656756, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Radius
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +76,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2320876338746939523, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfbdafa28398b4036a7271cf33d11070, type: 3}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398020678780227819, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335427557223043369, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
       value: 4
@@ -62,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Offset.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _boxCollider
@@ -85,8 +137,12 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _finalOffsetOfCollider.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Life
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Blurb
@@ -100,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Sprite
       value: 
-      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 7a526b376bb6b45318b3c03b8d67ff18, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.TickRate
       value: 0.4
@@ -111,19 +167,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5450953851411506198, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Name
       value: Tower_Cubicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765792755276649944, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765792755276649944, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a526b376bb6b45318b3c03b8d67ff18, type: 3}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870346232437509137, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677340019420512280, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_Size.x
@@ -133,7 +221,28 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6987f8840a3e5432797a4e287a4c766c, type: 3}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151331458216292995, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

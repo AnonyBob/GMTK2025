@@ -240,7 +240,15 @@ namespace DefaultNamespace
         public void SetHappiness(float happiness)
         {
             var previousHappiness = Happiness;
+            
             Happiness = happiness;
+            if (Happiness > 100) {
+                Happiness = 100;
+            }
+            else if (Happiness < 0) {
+                Happiness = 0;
+            }
+            
             SetAngryFaceAmount(previousHappiness);
         }
 

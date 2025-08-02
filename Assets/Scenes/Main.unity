@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000000dab05afbdddfc8483f25c80abe071f05f647484d983bc1f41709db18b41a586
+  m_ApplyToSortingLayers: 000000000dab05afbdddfc8483f25c80abe071f05f647484d983bc1f41709db18b41a58665f19cc6ef374e51
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3374,13 +3374,17 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8564075435514716380, guid: 77089c3bdcda8467b85d4c542776382b, type: 3}
+      propertyPath: '_towers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4456740146565299422, guid: ddfb22246c601471c87fd6d47ded3c20, type: 3}
+    - target: {fileID: 8564075435514716380, guid: 77089c3bdcda8467b85d4c542776382b, type: 3}
       propertyPath: '_towers.Array.data[3]'
       value: 
-      objectReference: {fileID: 4456740146565299422, guid: 7caeb6d6f35d44e19af33a73801a3062, type: 3}
+      objectReference: {fileID: 4456740146565299422, guid: 0c1b570ebd41a4c258af22feba82fd22, type: 3}
     - target: {fileID: 8564075435514716380, guid: 77089c3bdcda8467b85d4c542776382b, type: 3}
       propertyPath: '_towers.Array.data[4]'
       value: 
-      objectReference: {fileID: 4456740146565299422, guid: ddfb22246c601471c87fd6d47ded3c20, type: 3}
+      objectReference: {fileID: 4456740146565299422, guid: 7caeb6d6f35d44e19af33a73801a3062, type: 3}
     - target: {fileID: 8564075435514716380, guid: 77089c3bdcda8467b85d4c542776382b, type: 3}
       propertyPath: '_towers.Array.data[5]'
       value: 

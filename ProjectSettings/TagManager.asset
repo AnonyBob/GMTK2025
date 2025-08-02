@@ -50,6 +50,12 @@ TagManager:
   - name: Shadow
     uniqueID: 2258977163
     locked: 0
+  - name: TowerAreaBehind
+    uniqueID: 1364080623
+    locked: 0
+  - name: TowerBehind
+    uniqueID: 3332174181
+    locked: 0
   - name: LilGuy
     uniqueID: 2153575043
     locked: 0

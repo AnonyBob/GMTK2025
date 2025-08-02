@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5765792755276649944}
   - component: {fileID: 9151331458216292995}
+  - component: {fileID: 2480859657266358971}
   m_Layer: 7
   m_Name: TowerDamage_1
   m_TagString: Untagged
@@ -87,6 +88,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2480859657266358971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51184547157235343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a451a41fb5b243168e97c09722f1093a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.9137255}
+  _shadowOffset: {x: 0.2, y: -0.2}
 --- !u!1 &85302260594743186
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +297,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1315082175
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: f512b90b009b745dd9cb9c9b7c56104b, type: 3}
   m_Color: {r: 0.33490568, g: 1, b: 0.36404973, a: 0.078431375}
@@ -389,7 +404,7 @@ SortingGroup:
   m_GameObject: {fileID: 5450953851411506198}
   m_Enabled: 1
   m_SortingLayerID: -2063802947
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!50 &387035939508004168
@@ -556,7 +571,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072746913
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: -195126600, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
   m_Color: {r: 0.9245283, g: 0.38075522, b: 0.23985407, a: 1}
@@ -579,6 +594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17700438734521871}
   - component: {fileID: 5870346232437509137}
+  - component: {fileID: 8182240020142790357}
   m_Layer: 7
   m_Name: TowerPristine
   m_TagString: Untagged
@@ -656,6 +672,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8182240020142790357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507557720879044655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a451a41fb5b243168e97c09722f1093a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.9137255}
+  _shadowOffset: {x: 0.2, y: -0.2}
 --- !u!1 &7659951679012475982
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +799,7 @@ SortingGroup:
   m_GameObject: {fileID: 7873160444340186400}
   m_Enabled: 1
   m_SortingLayerID: -2063802947
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!1 &8547526159119410724
@@ -782,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773899935371520993}
   - component: {fileID: 2398020678780227819}
+  - component: {fileID: 5215016500194081792}
   m_Layer: 7
   m_Name: TowerDamage_2
   m_TagString: Untagged
@@ -859,6 +890,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5215016500194081792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547526159119410724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a451a41fb5b243168e97c09722f1093a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.9137255}
+  _shadowOffset: {x: 0.2, y: -0.2}
 --- !u!1 &8592068395939214798
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +1009,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072746913
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: -1
   m_Sprite: {fileID: -195126600, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}

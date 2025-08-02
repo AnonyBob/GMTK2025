@@ -34,7 +34,7 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            if (Keyboard.current.cKey.wasPressedThisFrame) {
+            if (Mouse.current.rightButton.wasPressedThisFrame) {
                 if (_animator.GetBool(OpenBool)) {
                     Close();
                 }
