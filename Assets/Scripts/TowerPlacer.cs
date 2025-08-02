@@ -13,15 +13,16 @@ namespace DefaultNamespace
         
         private Tower _towerToPlace;
         private Tower _selectedTower;
+        private Tower _towerToPlaceInstance;
 
         private void LateUpdate()
         {
-            if (_towerToPlace != null) {
+            if (_towerToPlaceInstance != null) {
                 var position = Mouse.current.position.ReadValue();
                 position = _mainCamera.ScreenToWorldPoint(position);
-                _towerToPlace.transform.position = position;
+                _towerToPlaceInstance.transform.position = position;
 
-                if (_towerToPlace.CheckCanPlace(position)) {
+                if (_towerToPlaceInstance.CheckCanPlace(position)) {
                     if(Mouse.current.leftButton.wasPressedThisFrame) {
                         PlaceTower(position);
                     }
@@ -35,13 +36,14 @@ namespace DefaultNamespace
         
         public void SetTowerToPlace(Tower tower)
         {
-            if (_towerToPlace != null) {
+            if (_towerToPlaceInstance != null) {
                 CancelTower();
             }
             
             Machine.AddMoney(-tower.Stats.Cost);
             _towerToPlace = tower;
-            _towerToPlace.PrepareForPlacing();
+            _towerToPlaceInstance = Instantiate(tower, transform);
+            _towerToPlaceInstance.PrepareForPlacing();
         }
 
         public void PlaceTower(Vector3 position)
@@ -49,16 +51,24 @@ namespace DefaultNamespace
             if (_towerToPlace == null)
                 return;
             
-            _towerToPlace.Place(position);
-            _towerToPlace = null;
+            _towerToPlaceInstance.Place(position);
+            _towerToPlaceInstance = null;
+            
+            if (Machine.CanAfford(_towerToPlace)) {
+                SetTowerToPlace(_towerToPlace);
+            }
+            else {
+                _towerToPlace = null;
+            }
         }
 
         public void CancelTower()
         {
             if(_towerToPlace != null) {
                 Machine.AddMoney(_towerToPlace.Stats.Cost);
-                Destroy(_towerToPlace.gameObject);
+                Destroy(_towerToPlaceInstance.gameObject);
                 _towerToPlace = null;
+                _towerToPlaceInstance = null;
             }
         }
 

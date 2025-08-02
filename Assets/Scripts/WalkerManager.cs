@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
@@ -36,12 +38,21 @@ namespace DefaultNamespace
 
         [SerializeField]
         private Walker _walkerPrefab;
+
+        [SerializeField]
+        private Image _happyFace;
+
+        [SerializeField]
+        private Image _sadFace;
+
+        [SerializeField]
+        private TextMeshProUGUI _satisfactionText;
         
         private readonly List<Walker> _walkers = new List<Walker>();
         private readonly List<StatusInstance> _statusesToRemove = new List<StatusInstance>();
-
-        private float _averageHappiness;
+        
         public int NumberOfWalkers => _walkers.Count;
+        public float AverageHappiness { get; private set; }
 
         private IEnumerator Start()
         {
@@ -80,7 +91,11 @@ namespace DefaultNamespace
                 happinessSum += walker.Happiness;
             }
 
-            _averageHappiness = happinessSum / _walkers.Count;
+            AverageHappiness = happinessSum / _walkers.Count;
+            _satisfactionText.text = (AverageHappiness / 100f).ToString("P2");
+            var readyToAttack = Machine.BelowAttackThreshold(AverageHappiness);
+            _happyFace.gameObject.SetActive(!readyToAttack);
+            _sadFace.gameObject.SetActive(readyToAttack);
         }
 
         private void UpdatePosition(Walker walker)
@@ -127,7 +142,7 @@ namespace DefaultNamespace
         public void SpawnWalker()
         {
             var instance = Instantiate(_walkerPrefab, _startPos.position, Quaternion.identity, transform);
-            instance.SetHappiness(_averageHappiness + _happinessAddedOnSpawn);
+            instance.SetHappiness(AverageHappiness + _happinessAddedOnSpawn);
         }
     }
 }

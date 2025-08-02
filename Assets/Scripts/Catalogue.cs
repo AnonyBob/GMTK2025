@@ -46,6 +46,11 @@ namespace DefaultNamespace
         
         public void Open(List<Tower> towers)
         {
+            var placer = FindFirstObjectByType<TowerPlacer>();
+            if (placer != null) {
+                placer.CancelTower();   
+            }
+            
             _animator.SetBool(OpenBool, true);
             foreach(var item in _items) {
                 Destroy(item.gameObject);
@@ -74,8 +79,7 @@ namespace DefaultNamespace
         {
             var placer = FindFirstObjectByType<TowerPlacer>();
             if (placer != null) {
-                var instance = Instantiate(tower, placer.transform);
-                placer.SetTowerToPlace(instance);
+                placer.SetTowerToPlace(tower);
             }
 
             Close();

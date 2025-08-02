@@ -13,9 +13,12 @@ namespace DefaultNamespace
 
         [SerializeField] 
         private int _moneyPerHit = 5;
+        
+        [SerializeField]
+        private float _attackThreshold = 50f;
 
         [SerializeField]
-        private TextMeshPro _moneyText;
+        private TextMeshProUGUI _moneyText;
 
         [SerializeField]
         private Button _hireButton;
@@ -74,7 +77,7 @@ namespace DefaultNamespace
             if (walker == null || walker.SplinePosition < 0.5f)
                 return;
 
-            if (walker.Happiness < walker.AttackThreshold) {
+            if (BelowAttackThreshold(_manager.AverageHappiness)) {
                 Attack();
             }
             
@@ -106,7 +109,7 @@ namespace DefaultNamespace
         public static void AddMoney(int moneyPerHit)
         {
             Instance.Money += moneyPerHit;
-            Instance._moneyText.text = $"<sprite name=\"Money\"> {Instance.Money:N0}";
+            Instance._moneyText.text = $"{Instance.Money:N0}";
             
             if(Instance.Money > Instance._highestMoney)
             {
@@ -132,6 +135,11 @@ namespace DefaultNamespace
         public static bool CanAfford(Tower tower)
         {
             return Instance.Money >= tower.Stats.Cost;
+        }
+
+        public static bool BelowAttackThreshold(float averageHappiness)
+        {
+            return Instance._attackThreshold >= averageHappiness;
         }
     }
 }

@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.260777
+      value: -39.07895
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.3935733
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _happinessPerHit
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: _finalSizeOfCollider.x
