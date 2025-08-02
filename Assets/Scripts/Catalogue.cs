@@ -53,6 +53,8 @@ namespace DefaultNamespace
         {
             var item = Instantiate(_itemPrefab, _itemContainer);
             item.SetTower(tower);
+            
+            _items.Add(item);
         }
         
         public void ActivateTower(Tower tower)
@@ -62,6 +64,8 @@ namespace DefaultNamespace
                 var instance = Instantiate(tower, placer.transform);
                 placer.SetTowerToPlace(instance);
             }
+
+            Close();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DefaultNamespace.Towers;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace DefaultNamespace
@@ -11,13 +12,14 @@ namespace DefaultNamespace
     public struct TowerStats
     {
         public int Cost;
-        public Sprite Sprite;
-        
         public float TickRate;
-        public string Blurb;
+        public int UnlockCost;
         public int RunCost;
-
-        public int UnlockAmount;
+        public int Life;
+        
+        public Sprite Sprite;
+        [TextArea] public string Blurb;
+        public bool SingleHit;
     }
     
     public enum PlacementState
@@ -32,6 +34,9 @@ namespace DefaultNamespace
         private static readonly int Placing = Animator.StringToHash("Placing");
         private static readonly int Selected = Animator.StringToHash("Selected");
         private static readonly int Invalid = Animator.StringToHash("Invalid");
+        private static readonly int LifeFloat = Animator.StringToHash("Life");
+        private static readonly int DeadTrigger = Animator.StringToHash("Dead");
+        private static readonly int ActivateTrigger = Animator.StringToHash("Activate");
 
         [field: SerializeField]
         public TowerStats Stats { get; private set; }
@@ -78,6 +83,7 @@ namespace DefaultNamespace
         private float _timeSinceLastTick;
         private EffectPool _effectPool;
         private PlacementState _placementState;
+        private int _lifeRemaining;
 
         protected EffectPool EffectPool
         {
@@ -97,6 +103,8 @@ namespace DefaultNamespace
             _placementState = PlacementState.Placing;
             _animator.SetBool(Placing, true);
             _animator.SetBool(Selected, false);
+
+            _lifeRemaining = Stats.Life;
         }
 
         public bool CheckCanPlace(Vector3 position)
@@ -139,6 +147,16 @@ namespace DefaultNamespace
                 Place(transform.position);
             }
         }
+
+        public void Activate()
+        {
+            _animator.SetTrigger(ActivateTrigger);
+        }
+
+        public void Die()
+        {
+            _animator.SetTrigger(DeadTrigger);
+        }
         
         private void Update()
         {
@@ -171,14 +189,25 @@ namespace DefaultNamespace
 
         private void Fire()
         {
-            if (Stats.RunCost > Machine.GetMoney()) return;
+            if (Stats.RunCost > Machine.GetMoney() || (Stats.Life > 0 && _lifeRemaining <= 0)) return;
             
             if (_targets == null || _targets.Count == 0) return;
             for (var i = 0; i < _attempts; ++i) {
-                var target = _targets[Random.Range(0, _targets.Count)];
+                var targetIndex = Random.Range(0, _targets.Count);
+                var target = _targets[targetIndex];
                 if (target != null && CanHit(target)) {
                     Machine.AddMoney(-Stats.RunCost);
                     HitTarget(target);
+
+                    if (Stats.SingleHit) {
+                        _targets.RemoveAt(targetIndex);
+                    }
+
+                    if (Stats.Life > 0) {
+                        _lifeRemaining--;
+                        UpdateLifeVisuals();
+                    }
+                    
                     return;
                 }
             }
@@ -191,6 +220,13 @@ namespace DefaultNamespace
         protected virtual bool CanHit(Walker target)
         {
             return true;
+        }
+        
+        protected virtual void UpdateLifeVisuals()
+        {
+            if (_animator != null) {
+                _animator.SetFloat(LifeFloat, (1f * _lifeRemaining) / Stats.Life);
+            }
         }
     }
 }

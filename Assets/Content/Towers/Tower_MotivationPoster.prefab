@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8416601681424142554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1778869676481656756, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Radius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.865568
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7404947
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157910927190117636, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _towerType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _boxCollider
+      value: 
+      objectReference: {fileID: 3673321587940366009}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _finalSizeOfCollider.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _finalSizeOfCollider.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: _ignoreIfTheyHaveStatus
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.Blurb
+      value: Give 110%! Employees become <sprite name="Motivated"> {happy} increasing
+        their <sprite name="Money"> output and <sprite name="SadFace"> output.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <DooberAnchor>k__BackingField
+      value: 
+      objectReference: {fileID: 8252962343508476381}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.Sprite
+      value: 
+      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.SingleHit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.UnlockCost
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406715103907923711, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450953851411506198, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Name
+      value: Tower_MotivationPoster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894042165347942850, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+--- !u!61 &3673321587940366009 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5059658011422246499, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+  m_PrefabInstance: {fileID: 8416601681424142554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8252962343508476381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 451959909462987015, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+  m_PrefabInstance: {fileID: 8416601681424142554}
+  m_PrefabAsset: {fileID: 0}

@@ -105,14 +105,34 @@ MonoBehaviour:
     m_GlyphIndex: 4
     m_Scale: 1
     m_Name: Lock
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 5
+    m_Scale: 1
+    m_Name: Coffee
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 6
+    m_Scale: 1
+    m_Name: Document
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 7
+    m_Scale: 1
+    m_Name: Water
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 8
+    m_Scale: 1
+    m_Name: Motivation
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
       m_Width: 102
       m_Height: 102
       m_HorizontalBearingX: -51
-      m_HorizontalBearingY: 51
-      m_HorizontalAdvance: 102
+      m_HorizontalBearingY: 88
+      m_HorizontalAdvance: 104
     m_GlyphRect:
       m_X: 186
       m_Y: 806
@@ -127,8 +147,8 @@ MonoBehaviour:
       m_Width: 102
       m_Height: 102
       m_HorizontalBearingX: -51
-      m_HorizontalBearingY: 51
-      m_HorizontalAdvance: 102
+      m_HorizontalBearingY: 88
+      m_HorizontalAdvance: 104
     m_GlyphRect:
       m_X: 311
       m_Y: 806
@@ -142,9 +162,9 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 102
       m_Height: 102
-      m_HorizontalBearingX: 3
+      m_HorizontalBearingX: -43.1
       m_HorizontalBearingY: 88
-      m_HorizontalAdvance: 104
+      m_HorizontalAdvance: 42.8
     m_GlyphRect:
       m_X: 429
       m_Y: 806
@@ -159,7 +179,7 @@ MonoBehaviour:
       m_Width: 113
       m_Height: 113
       m_HorizontalBearingX: -56.5
-      m_HorizontalBearingY: 56.5
+      m_HorizontalBearingY: 97
       m_HorizontalAdvance: 113
     m_GlyphRect:
       m_X: 547
@@ -175,16 +195,80 @@ MonoBehaviour:
       m_Width: 71
       m_Height: 103
       m_HorizontalBearingX: -35.5
-      m_HorizontalBearingY: 51.5
-      m_HorizontalAdvance: 71
+      m_HorizontalBearingY: 99.4
+      m_HorizontalAdvance: 94
     m_GlyphRect:
-      m_X: 700
-      m_Y: 825
-      m_Width: 71
-      m_Height: 103
+      m_X: 698
+      m_Y: 824
+      m_Width: 74
+      m_Height: 105
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: -1930331234, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 5
+    m_Metrics:
+      m_Width: 106
+      m_Height: 94
+      m_HorizontalBearingX: -26
+      m_HorizontalBearingY: 84
+      m_HorizontalAdvance: 122
+    m_GlyphRect:
+      m_X: 178
+      m_Y: 654
+      m_Width: 106
+      m_Height: 94
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -530660822, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 6
+    m_Metrics:
+      m_Width: 86
+      m_Height: 118
+      m_HorizontalBearingX: -41.5
+      m_HorizontalBearingY: 105
+      m_HorizontalAdvance: 108
+    m_GlyphRect:
+      m_X: 326
+      m_Y: 650
+      m_Width: 86
+      m_Height: 118
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -1076612118, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 7
+    m_Metrics:
+      m_Width: 70
+      m_Height: 92
+      m_HorizontalBearingX: -35
+      m_HorizontalBearingY: 82
+      m_HorizontalAdvance: 71
+    m_GlyphRect:
+      m_X: 448
+      m_Y: 657
+      m_Width: 70
+      m_Height: 92
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -1862900447, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 8
+    m_Metrics:
+      m_Width: 94
+      m_Height: 98
+      m_HorizontalBearingX: -45.3
+      m_HorizontalBearingY: 84
+      m_HorizontalAdvance: 94.8
+    m_GlyphRect:
+      m_X: 556
+      m_Y: 668
+      m_Width: 94
+      m_Height: 98
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -408512664, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []

@@ -22,6 +22,7 @@ namespace DefaultNamespace
         public int Money = 100;
         
         private static Machine Instance;
+        private int _highestMoney;
         
         private void Awake()
         {
@@ -83,6 +84,11 @@ namespace DefaultNamespace
         {
             Instance.Money += moneyPerHit;
             Instance._moneyText.text = $"<sprite name=\"Money\"> {Instance.Money:N0}";
+            
+            if(Instance.Money > Instance._highestMoney)
+            {
+                Instance._highestMoney = Instance.Money;
+            }
         }
 
         public static int GetMoney()
@@ -93,6 +99,16 @@ namespace DefaultNamespace
         public static List<Tower> GetTowers()
         {
             return Instance._towers;
+        }
+
+        public static bool CheckUnlocked(Tower tower)
+        {
+            return Instance._highestMoney >= tower.Stats.UnlockCost;
+        }
+
+        public static bool CanAfford(Tower tower)
+        {
+            return Instance.Money >= tower.Stats.Cost;
         }
     }
 }

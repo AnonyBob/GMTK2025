@@ -1,17 +1,61 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace DefaultNamespace.Towers
 {
+    public enum TowerType
+    {
+        Basic,
+        Item,
+        Status
+    }
+    
     public class BasicTower : Tower
     {
         [SerializeField]
+        private TowerType _towerType;
+        
+        [SerializeField, ShowIf("@_towerType == TowerType.Basic")]
         private int _moneyPerHit = 2;
         
-        [SerializeField]
+        [SerializeField, ShowIf("@_towerType == TowerType.Basic")]
         private float _happinessPerHit = -0.3f;
 
+        [SerializeField, ShowIf("@_towerType == TowerType.Item")]
+        private ItemType _itemGiven;
+        
+        [SerializeField, ShowIf("@_towerType == TowerType.Item")]
+        private bool _ignoreIfTheyHaveItem;
+
+        [SerializeField, ShowIf("@_towerType == TowerType.Status")]
+        private Status _statusGiven;
+        
+        [SerializeField, ShowIf("@_towerType == TowerType.Status")]
+        private bool _ignoreIfTheyHaveStatus;
+        
         [SerializeField]
         private WalkerToTowerEffect _effect;
+        
+        protected override bool CanHit(Walker target)
+        {
+            switch (_towerType) {
+                case TowerType.Basic:
+                    return true;
+                case TowerType.Item:
+                    if (_ignoreIfTheyHaveItem) {
+                        return !target.HasItem(_itemGiven);
+                    }
+                    return true;
+                case TowerType.Status:
+                    if (_ignoreIfTheyHaveStatus) {
+                        return !target.HasStatus(_statusGiven);
+                    }
+                    return true;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
         
         protected override void HitTarget(Walker target)
         {
@@ -26,9 +70,27 @@ namespace DefaultNamespace.Towers
 
         private void HandleComplete(Walker target, Tower tower)
         {
-            var (money, happiness) = target.GetMotivation();
-            Machine.AddMoney(Mathf.FloorToInt(money * _moneyPerHit));
-            target.AddHappiness(_happinessPerHit * happiness);
+            switch (_towerType) {
+                case TowerType.Basic:
+                    var (money, happiness) = target.GetMotivation();
+                    Machine.AddMoney(Mathf.FloorToInt(money * _moneyPerHit));
+                    target.AddHappiness(_happinessPerHit * happiness);
+                    break;
+                case TowerType.Item:
+                    if (_itemGiven != null) {
+                        target.AddItem(_itemGiven);
+                    }
+                    break;
+                case TowerType.Status:
+                    if (_statusGiven != null) {
+                        target.AddStatus(_statusGiven);
+                    }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            tower.Activate();
         }
     }
 }

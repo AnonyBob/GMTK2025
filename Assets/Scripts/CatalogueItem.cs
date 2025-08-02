@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -14,12 +15,23 @@ namespace DefaultNamespace
         private TextMeshProUGUI _cost;
 
         [SerializeField]
+        private TextMeshProUGUI _lockText;
+
+        [SerializeField]
+        private RectTransform _lockedTransform;
+        
+        [SerializeField]
+        private RectTransform _notEnoughMoneyTransform;
+        
+        [SerializeField]
         private RectTransform _dragTarget;
         
         private Vector2 _startingPositionMouse;
         private Vector2 _startingPosition;
         private Transform _originalParent;
         private Tower _tower;
+        private bool _detached;
+        private bool _dragging;
 
         private Catalogue _catalogue;
         private Catalogue Catalogue
@@ -39,34 +51,64 @@ namespace DefaultNamespace
             _tower = tower;
             _icon.sprite = tower.Stats.Sprite;
             _cost.text = $"<sprite name=\"Money\"> {tower.Stats.Cost:N0}";
+            _lockText.text = $"Unlocks at \n<sprite name=\"Money\"> {tower.Stats.UnlockCost:N0}";
+            
+            UpdateLockedAndPurchasable();
         }
-        
+
+        private void Update()
+        {
+            if (_tower != null) {
+                UpdateLockedAndPurchasable();
+            }
+        }
+
+        private void UpdateLockedAndPurchasable()
+        {
+            var unlocked = Machine.CheckUnlocked(_tower);
+            _lockedTransform.gameObject.SetActive(!unlocked);
+            _cost.gameObject.SetActive(unlocked);
+            _notEnoughMoneyTransform.gameObject.SetActive(!Machine.CanAfford(_tower) && unlocked);
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnBeginDrag(eventData);
-            
+            if (!Machine.CheckUnlocked(_tower) || !Machine.CanAfford(_tower)) {
+                return;
+            }
+
+            _dragging = true;
             _startingPositionMouse = eventData.position;
             _originalParent = _dragTarget.transform.parent;
             _startingPosition = _dragTarget.anchoredPosition;
-            _dragTarget.transform.parent = Catalogue.DragParent;
+            _dragTarget.SetParent(Catalogue.DragParent);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnDrag(eventData);
-            
-            var delta = eventData.position - _startingPositionMouse;
-            delta.x = 0;
-            
-            if (delta.y > Catalogue.ActivateThreshold) {
-                Catalogue.ActivateTower(_tower);
-                Destroy(_dragTarget.gameObject);
+            if (!Machine.CheckUnlocked(_tower) || _detached || !_dragging) {
                 return;
             }
             
+            if(!Machine.CanAfford(_tower)) {
+                ResetDragging();
+                return;
+            }
+            
+            var delta = eventData.position - _startingPositionMouse;
+            if (delta.y > Catalogue.ActivateThreshold) {
+                Catalogue.ActivateTower(_tower);
+                _detached = true;
+                ResetDragging();
+                return;
+            }
+
+            var eventPosition = eventData.position;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 Catalogue.DragParent,
-                eventData.position,
+                eventPosition,
                 eventData.pressEventCamera,
                 out Vector2 localPoint
             );
@@ -77,8 +119,18 @@ namespace DefaultNamespace
         public void OnEndDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnEndDrag(eventData);
+            if (!Machine.CheckUnlocked(_tower)) {
+                return;
+            }
+            
+            ResetDragging();
+        }
+        
+        private void ResetDragging()
+        {
+            _dragging = false;
             if (_dragTarget != null) {
-                _dragTarget.parent =  _originalParent;
+                _dragTarget.SetParent(_originalParent);
                 _dragTarget.anchoredPosition = _startingPosition;
             }
         }

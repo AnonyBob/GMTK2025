@@ -114,7 +114,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,7 +136,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,7 +158,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,7 +180,7 @@ TextureImporter:
         width: 113
         height: 113
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Lock
       rect:
         serializedVersion: 2
-        x: 700
-        y: 825
-        width: 71
-        height: 103
+        x: 698
+        y: 824
+        width: 74
+        height: 105
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,6 +211,94 @@ TextureImporter:
       bones: []
       spriteID: b15bcc875a2714da98ef592d16b5b1ee
       internalID: -1930331234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 654
+        width: 106
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b5bd833886b4765a4dc795d41e7b71
+      internalID: -530660822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Document
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 650
+        width: 86
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6d2a9b029834503a13f8bc34907842
+      internalID: -1076612118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 657
+        width: 70
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb4f419170254100b8fafa5ad0827c3
+      internalID: -1862900447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Motivation
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 668
+        width: 94
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad2009ba79854218b2630431b9f3d6f
+      internalID: -408512664
       vertices: []
       indices: 
       edges: []
@@ -230,10 +318,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Cancel: -195126600
+      Coffee: -530660822
+      Document: -1076612118
       HappyFace: 2898781058754182782
       Lock: -1930331234
       Money: -3010194557416171734
+      Motivation: -408512664
       SadFace: 4811871626299018042
+      Water: -1862900447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 
