@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DefaultNamespace
 {
@@ -29,6 +30,18 @@ namespace DefaultNamespace
         {
             _animator.SetBool(OpenBool, false);
             _animator.Play("Close", 0, 1);
+        }
+
+        private void Update()
+        {
+            if (Keyboard.current.cKey.wasPressedThisFrame) {
+                if (_animator.GetBool(OpenBool)) {
+                    Close();
+                }
+                else {
+                    Open(Machine.GetTowers());
+                }
+            }
         }
         
         public void Open(List<Tower> towers)

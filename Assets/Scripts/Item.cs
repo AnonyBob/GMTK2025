@@ -4,6 +4,10 @@ namespace DefaultNamespace
 {
     public class Item : MonoBehaviour
     {
-        public ItemType Type;
+        [field: SerializeField]
+        public ItemType Type { get; private set; }
+        
+        [field: SerializeField]
+        public Status[] Statuses { get; private set; }
     }
 }

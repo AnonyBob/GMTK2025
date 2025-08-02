@@ -112,7 +112,7 @@ namespace DefaultNamespace
                 status.Status.OnUpdate(walker, Time.deltaTime);
                 status.RemainingTime -= Time.deltaTime;
 
-                if (status.RemainingTime <= 0f) {
+                if (status.RemainingTime <= 0f && status.Status.Duration > 0 && status.FromItem == null) {
                     _statusesToRemove.Add(status);
                 }
             }

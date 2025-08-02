@@ -86,7 +86,7 @@ namespace DefaultNamespace.Towers
                     break;
                 case TowerType.Status:
                     if (_statusGiven != null) {
-                        target.AddStatus(_statusGiven);
+                        target.AddStatus(_statusGiven, null);
                     }
                     break;
                 default:

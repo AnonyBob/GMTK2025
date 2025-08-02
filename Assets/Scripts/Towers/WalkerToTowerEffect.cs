@@ -48,12 +48,12 @@ namespace DefaultNamespace.Towers
         public override IEnumerator Run(WalkerToTowerEffectData data)
         {
             var startPos = data.StartAtWalker
-                ? transform.position = data.Walker.transform.position
+                ? transform.position = data.Walker.DooberAnchor.position
                 : transform.position = data.Tower.DooberAnchor.position;
             
             var endPos = data.StartAtWalker 
                 ? data.Tower.DooberAnchor.position
-                : data.Walker.transform.position;
+                : data.Walker.DooberAnchor.position;
             
             _animation.Play(_playClip);
             while (_animation.IsPlaying(_playClip)) {
@@ -62,7 +62,7 @@ namespace DefaultNamespace.Towers
                 yield return null;
 
                 if (!data.StartAtWalker) {
-                    endPos = data.Walker.transform.position;
+                    endPos = data.Walker.DooberAnchor.position;
                 }
             }
 

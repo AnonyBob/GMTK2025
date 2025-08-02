@@ -9,11 +9,13 @@ namespace DefaultNamespace
     {
         public Status Status;
         public float RemainingTime;
+        public Item FromItem;
 
-        public StatusInstance(Status status, float duration)
+        public StatusInstance(Status status, float duration, Item addedByItem = null)
         {
             Status = status;
             RemainingTime = duration;
+            FromItem = addedByItem;
         }
     }
     
@@ -139,6 +141,12 @@ namespace DefaultNamespace
             var itemPrefab = item.prefab;
             var newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity, GetNextItemAnchor());
             list.Add(newItem);
+            
+            if (newItem.Statuses is { Length: > 0 }) {
+                foreach(var status in newItem.Statuses) {
+                    AddStatus(status, newItem);
+                }
+            }
         }
 
         private Transform GetNextItemAnchor()
@@ -154,7 +162,13 @@ namespace DefaultNamespace
             
             // Remove the first item of the specified type
             var itemToRemove = list[0];
-            list.RemoveAt(0);       
+            list.RemoveAt(0);
+            if (itemToRemove.Statuses is { Length: > 0 }) {
+                foreach(var status in itemToRemove.Statuses) {
+                    RemoveStatus(status, itemToRemove);
+                }
+            }
+            
             Destroy(itemToRemove.gameObject);
         }
         
@@ -163,9 +177,9 @@ namespace DefaultNamespace
             return Items.TryGetValue(item, out var list) && list.Count > 0;
         }
 
-        public void AddStatus(Status status)
+        public void AddStatus(Status status, Item fromItem)
         {
-            Statuses.Add(new StatusInstance(status, status.Duration));
+            Statuses.Add(new StatusInstance(status, status.Duration, fromItem));
         }
         
         public bool HasStatus(Status status)
@@ -173,11 +187,11 @@ namespace DefaultNamespace
             return Statuses.Any(s => s.Status == status);
         }
         
-        public void RemoveStatus(Status status)
+        public void RemoveStatus(Status status, Item fromItem = null)
         {
             for(var i = 0; i < Statuses.Count; i++)
             {
-                if (Statuses[i].Status == status) {
+                if (Statuses[i].Status == status && (fromItem == null || Statuses[i].FromItem == fromItem)) {
                     Statuses.RemoveAt(i);
                     return;
                 }

@@ -1840,10 +1840,17 @@ MonoBehaviour:
   SplinePosition: 0
   Happiness: 100
   Speed: 10
-  AttackThreshold: 50
+  AttackThreshold: 40
   SpawnThreshold: 70
   TimeSinceHappinessUpdate: 0
   HappinessUpdateAmount: -0.3
+  <DooberAnchor>k__BackingField: {fileID: 1995019020887254706}
+  _itemAnchors:
+  - {fileID: 4190987161496123349}
+  - {fileID: 7960657877960044140}
+  - {fileID: 570028370587820311}
+  - {fileID: 2566410293675619693}
+  - {fileID: 3240028994063869530}
   _face: {fileID: 6535803804034294753}
   _skinColors:
   - {r: 1, g: 0.7251978, b: 0.3915094, a: 1}
