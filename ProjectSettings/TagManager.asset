@@ -14,7 +14,7 @@ TagManager:
   - Walker
   - Tower
   - Path
-  - 
+  - Shadow
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Path
     uniqueID: 2936384269
+    locked: 0
+  - name: Shadow
+    uniqueID: 2258977163
     locked: 0
   - name: LilGuy
     uniqueID: 2153575043
