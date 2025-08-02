@@ -16,6 +16,8 @@ namespace DefaultNamespace
         public float TickRate;
         public string Blurb;
         public int RunCost;
+
+        public int UnlockAmount;
     }
     
     public enum PlacementState

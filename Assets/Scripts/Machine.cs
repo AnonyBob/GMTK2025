@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -14,10 +14,13 @@ namespace DefaultNamespace
 
         [SerializeField]
         private TextMeshPro _moneyText;
+
+        [SerializeField]
+        private List<Tower> _towers;
         
         public float Health = 100f;
         public int Money = 100;
-
+        
         private static Machine Instance;
         
         private void Awake()
@@ -85,6 +88,11 @@ namespace DefaultNamespace
         public static int GetMoney()
         {
             return Instance.Money;
+        }
+
+        public static List<Tower> GetTowers()
+        {
+            return Instance._towers;
         }
     }
 }

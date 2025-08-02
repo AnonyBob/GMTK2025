@@ -95,6 +95,16 @@ MonoBehaviour:
     m_GlyphIndex: 2
     m_Scale: 1
     m_Name: Money
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 3
+    m_Scale: 1
+    m_Name: Cancel
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 4
+    m_Scale: 1
+    m_Name: Lock
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -104,10 +114,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 51
       m_HorizontalAdvance: 102
     m_GlyphRect:
-      m_X: 185
-      m_Y: 805
-      m_Width: 102
-      m_Height: 102
+      m_X: 186
+      m_Y: 806
+      m_Width: 100
+      m_Height: 100
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -120,10 +130,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 51
       m_HorizontalAdvance: 102
     m_GlyphRect:
-      m_X: 310
-      m_Y: 805
-      m_Width: 102
-      m_Height: 102
+      m_X: 311
+      m_Y: 806
+      m_Width: 100
+      m_Height: 100
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -136,13 +146,45 @@ MonoBehaviour:
       m_HorizontalBearingY: 88
       m_HorizontalAdvance: 104
     m_GlyphRect:
-      m_X: 428
-      m_Y: 805
-      m_Width: 102
-      m_Height: 102
+      m_X: 429
+      m_Y: 806
+      m_Width: 100
+      m_Height: 100
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: -3010194557416171734, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 113
+      m_Height: 113
+      m_HorizontalBearingX: -56.5
+      m_HorizontalBearingY: 56.5
+      m_HorizontalAdvance: 113
+    m_GlyphRect:
+      m_X: 547
+      m_Y: 800
+      m_Width: 113
+      m_Height: 113
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -195126600, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
+  - m_Index: 4
+    m_Metrics:
+      m_Width: 71
+      m_Height: 103
+      m_HorizontalBearingX: -35.5
+      m_HorizontalBearingY: 51.5
+      m_HorizontalAdvance: 71
+    m_GlyphRect:
+      m_X: 700
+      m_Y: 825
+      m_Width: 71
+      m_Height: 103
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -1930331234, guid: bb3a7d804a2ab4c5a86c7523934454a7, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
