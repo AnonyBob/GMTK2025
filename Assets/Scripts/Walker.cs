@@ -139,7 +139,8 @@ namespace DefaultNamespace
             }
 
             var itemPrefab = item.prefab;
-            var newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity, GetNextItemAnchor());
+            var anchor = GetNextItemAnchor();
+            var newItem = Instantiate(itemPrefab, anchor.transform.position, Quaternion.identity, anchor);
             list.Add(newItem);
             
             if (newItem.Statuses is { Length: > 0 }) {
@@ -196,7 +197,9 @@ namespace DefaultNamespace
 
         public void AddStatus(Status status, Item fromItem)
         {
-            Statuses.Add(new StatusInstance(status, status.Duration, fromItem));
+            var instance = new StatusInstance(status, status.Duration, fromItem);
+            status.OnAdded(this, instance);
+            Statuses.Add(instance);
         }
         
         public bool HasStatus(Status status)
@@ -218,14 +221,16 @@ namespace DefaultNamespace
             }
         }
 
-        public (float MoneyMultiplier, float HappinessMultiplier) GetMotivation()
+        public (float MoneyMultiplier, float HappinessMultiplier) GetMotivation(float happinessPerHit)
         {
             var moneyMultiplier = 1f;
             var happinessMultiplier = 1f;
             foreach (var status in Statuses) {
                 if (status.Status is MotivationStatus motivationStatus) {
                     moneyMultiplier *= motivationStatus.WorkMultiplier;
-                    happinessMultiplier *= motivationStatus.HappinessMultiplier;
+                    if (happinessPerHit > 0 || !motivationStatus.HappinessOnlyWhenPositive) {
+                        happinessMultiplier *= motivationStatus.HappinessMultiplier;    
+                    }
                 }
             }
             

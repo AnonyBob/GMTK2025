@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Type>k__BackingField: {fileID: 11400000, guid: 5b9b23fe5731b4a94a653a8b97a8d5d9, type: 2}
+  _art: {fileID: 3620879552788416690}
+  _rotationMin: -15
+  _rotationMax: 15
   <Statuses>k__BackingField:
   - {fileID: 11400000, guid: 74bac204ac31a4e7a9b534b02030909c, type: 2}
 --- !u!210 &2199976339725202914
@@ -88,8 +91,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6047766796510489656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CoffeeSpeedStatus
   m_EditorClassIdentifier: 
   Duration: 5
-  _speedAmount: 2
+  _speedAmount: 1.3

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7999462b1da8418e9b5286ca83f575f1, type: 3}
   m_Name: WaterSpeedStatus
   m_EditorClassIdentifier: 
-  Duration: 5
+  Duration: 10
   _speedAmount: 0.5

@@ -75,7 +75,7 @@ namespace DefaultNamespace.Towers
         {
             switch (_towerType) {
                 case TowerType.Basic:
-                    var (money, happiness) = target.GetMotivation();
+                    var (money, happiness) = target.GetMotivation(_happinessPerHit);
                     Machine.AddMoney(Mathf.FloorToInt(money * _moneyPerHit));
                     target.AddHappiness(_happinessPerHit * happiness);
                     break;
