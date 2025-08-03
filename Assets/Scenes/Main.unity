@@ -4914,10 +4914,6 @@ PrefabInstance:
       propertyPath: _walkerCostText
       value: 
       objectReference: {fileID: 2047463374}
-    - target: {fileID: 8564075435514716380, guid: 77089c3bdcda8467b85d4c542776382b, type: 3}
-      propertyPath: _walkerSpawnChance
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

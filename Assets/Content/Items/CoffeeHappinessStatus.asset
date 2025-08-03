@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Duration: 5
   WorkMultiplier: 1
-  HappinessMultiplier: 1.4
+  HappinessMultiplier: 1.3
   HappinessType: 0
