@@ -139,6 +139,7 @@ MonoBehaviour:
   _rotationMax: 15
   <Statuses>k__BackingField:
   - {fileID: 11400000, guid: bd4c4e015313f428ba0f9e55df9d4bdf, type: 2}
+  - {fileID: 11400000, guid: 355e7f297c913471d8adcc1afe8b7e6a, type: 2}
 --- !u!210 &9188099277899260434
 SortingGroup:
   m_ObjectHideFlags: 0
