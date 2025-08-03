@@ -145,9 +145,13 @@ PrefabInstance:
       value: 100125
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.Name
+      value: Bathroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Blurb
       value: Don't forget to clock out! Employees use the bathroom and get <sprite
-        name="HappyFace"> {happy} but lose <sprite name="Money"> {money}.
+        name="HappyFace"> {0} but lose <sprite name="Money"> {1}.
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <DooberAnchor>k__BackingField

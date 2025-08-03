@@ -23,13 +23,13 @@ namespace DefaultNamespace
         
         public void Hide()
         {
-            gameObject.SetActive(false);
+            _panel.gameObject.SetActive(false);
         }
 
-        public void Show(Tower tower, Transform anchor)
+        public void Show(Tower tower, Transform anchor, bool fromUI = false)
         {
             _title.text = tower.Stats.Name;
-            _blurb.text = tower.Stats.Blurb;
+            _blurb.text = string.Format(tower.Stats.Blurb, tower.HappinessAmount, tower.MoneyAmount);
             
             _runCostDisplay.SetActive(tower.Stats.RunCost > 0);
             _runCost.text = $"{tower.Stats.RunCost}/tick";
@@ -38,9 +38,11 @@ namespace DefaultNamespace
             _lifeRemaining.text = $"{tower.LifeRemaining}/{tower.Stats.Life}";
             
             var screenPoint = _mainCamera.WorldToScreenPoint(anchor.position);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(_container, screenPoint, _mainCamera,
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(_container, screenPoint, fromUI ? _mainCamera : null,
                 out var localPoint);
 
+            Debug.Log(localPoint);
+            
             var pivotX = 0f;
             if (localPoint.x > 100) {
                 pivotX = 1f;
@@ -54,7 +56,7 @@ namespace DefaultNamespace
             _panel.pivot = new Vector2(pivotX, pivotY);
             _panel.anchoredPosition = localPoint;
             
-            gameObject.SetActive(true);
+            _panel.gameObject.SetActive(true);
         }
     }
 }

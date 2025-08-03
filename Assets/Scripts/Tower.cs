@@ -100,6 +100,9 @@ namespace DefaultNamespace
             }
         }
 
+        public virtual float HappinessAmount => 0;
+        public virtual float MoneyAmount => 0;
+
         public void PrepareForPlacing()
         {
             gameObject.layer = LayerMask.NameToLayer("TowerPlacing");
@@ -145,9 +148,12 @@ namespace DefaultNamespace
             if (_placementState == PlacementState.Placed) {
                 Placer.SetSelectedTower(this);
                 Select();
+                
+                FindFirstObjectByType<InfoScreen>().Show(this, DooberAnchor);
             }
             else if (_placementState == PlacementState.Selected) {
                 Place(transform.position);
+                FindFirstObjectByType<InfoScreen>().Hide();
             }
         }
 

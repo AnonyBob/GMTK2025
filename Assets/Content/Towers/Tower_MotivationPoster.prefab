@@ -101,9 +101,13 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
+      propertyPath: <Stats>k__BackingField.Name
+      value: Motivational Poster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Blurb
-      value: Give 110%! Employees become <sprite name="Motivated"> {happy} increasing
-        their <sprite name="Money"> output and <sprite name="SadFace"> output.
+      value: Give 110%! Employees become <sprite name="Motivated">! increasing their
+        <sprite name="Money"> output and <sprite name="SadFace"> output!
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <DooberAnchor>k__BackingField

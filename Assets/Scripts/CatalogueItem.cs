@@ -97,7 +97,7 @@ namespace DefaultNamespace
 
         public void ShowInfo()
         {
-            InfoScreen.Show(_tower, _infoAnchor);
+            InfoScreen.Show(_tower, _infoAnchor, fromUI: true);
         }
 
         public void OnBeginDrag(PointerEventData eventData)

@@ -13,6 +13,9 @@ namespace DefaultNamespace.Towers
     
     public class BasicTower : Tower
     {
+        public override float HappinessAmount => _happinessPerHit;
+        public override float MoneyAmount => _moneyPerHit;
+        
         [SerializeField]
         private TowerType _towerType;
         
