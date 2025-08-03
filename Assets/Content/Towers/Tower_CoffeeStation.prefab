@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fc83c93a65c8f46f68d72d0062eb231e, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.RunCost
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.TickRate

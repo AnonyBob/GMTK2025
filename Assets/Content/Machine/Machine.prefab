@@ -131,6 +131,7 @@ MonoBehaviour:
   _moneyText: {fileID: 0}
   _hireButton: {fileID: 0}
   _walkerCostText: {fileID: 0}
+  _healthText: {fileID: 0}
   _towers:
   - {fileID: 4456740146565299422, guid: bfabfcbe6af4e43af926c2d824432537, type: 3}
   - {fileID: 4456740146565299422, guid: 11a9cae11b6514b63ae8d85aed228bc8, type: 3}
@@ -142,7 +143,7 @@ MonoBehaviour:
   - {fileID: 4456740146565299422, guid: b8434f4afa90b4681a8104c6e2727df4, type: 3}
   Health: 100
   Money: 250
-  _walkerSpawnChance: 0.05
+  _walkerSpawnChance: 0.1
   _costToSpawnWalkerMultiplier:
     serializedVersion: 2
     m_Curve:

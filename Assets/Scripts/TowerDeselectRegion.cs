@@ -34,9 +34,11 @@ namespace DefaultNamespace
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Left)
+                return;
+            
             Placer.SetSelectedTower(null);
             InfoScreen.Hide();
-            
             FindFirstObjectByType<Catalogue>().Close();
         }
     }
