@@ -2995,7 +2995,7 @@ GameObject:
   - component: {fileID: 1837494588}
   - component: {fileID: 1837494589}
   - component: {fileID: 1837494590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

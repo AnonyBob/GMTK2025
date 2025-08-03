@@ -36,6 +36,8 @@ namespace DefaultNamespace
         {
             Placer.SetSelectedTower(null);
             InfoScreen.Hide();
+            
+            FindFirstObjectByType<Catalogue>().Close();
         }
     }
 }
