@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Life
-      value: 500
+      value: 100125
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.Blurb
@@ -159,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2c2971b55540e4aef887e1cb3c5b395a, type: 3}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.RunCost
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5265907729972784132, guid: 270d31ca241af4ac886b7180be5275de, type: 3}
       propertyPath: <Stats>k__BackingField.SingleHit

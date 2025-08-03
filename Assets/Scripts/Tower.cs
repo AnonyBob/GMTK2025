@@ -11,6 +11,7 @@ namespace DefaultNamespace
     [System.Serializable]
     public struct TowerStats
     {
+        public string Name;
         public int Cost;
         public float TickRate;
         public int UnlockCost;
@@ -78,6 +79,8 @@ namespace DefaultNamespace
                 return _placer;
             }
         }
+        
+        public int LifeRemaining => _lifeRemaining;
         
         private readonly List<Walker> _targets = new List<Walker>();
         private float _timeSinceLastTick;

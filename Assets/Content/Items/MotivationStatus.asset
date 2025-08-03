@@ -15,3 +15,4 @@ MonoBehaviour:
   Duration: 6
   WorkMultiplier: 2.5
   HappinessMultiplier: 1.5
+  HappinessType: 1

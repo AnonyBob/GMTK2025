@@ -228,8 +228,14 @@ namespace DefaultNamespace
             foreach (var status in Statuses) {
                 if (status.Status is MotivationStatus motivationStatus) {
                     moneyMultiplier *= motivationStatus.WorkMultiplier;
-                    if (happinessPerHit > 0 || !motivationStatus.HappinessOnlyWhenPositive) {
-                        happinessMultiplier *= motivationStatus.HappinessMultiplier;    
+                    if(happinessPerHit > 0 && motivationStatus.HappinessType == HappinessType.Positive) {
+                        happinessMultiplier *= motivationStatus.HappinessMultiplier;
+                    }
+                    else if (happinessPerHit < 0 && motivationStatus.HappinessType == HappinessType.Negative) {
+                        happinessMultiplier *= motivationStatus.HappinessMultiplier;
+                    }
+                    else if (motivationStatus.HappinessType == HappinessType.Neutral) {
+                        happinessMultiplier *= motivationStatus.HappinessMultiplier;
                     }
                 }
             }

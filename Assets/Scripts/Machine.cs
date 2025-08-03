@@ -27,10 +27,16 @@ namespace DefaultNamespace
         private TextMeshProUGUI _walkerCostText;
 
         [SerializeField]
+        private TextMeshProUGUI _healthText;
+
+        [SerializeField]
         private List<Tower> _towers;
         
         public float Health = 100f;
         public int Money = 100;
+        
+        [SerializeField]
+        private float _walkerSpawnChance = 0.2f;
         
         [SerializeField]
         private AnimationCurve _costToSpawnWalkerMultiplier;
@@ -54,6 +60,7 @@ namespace DefaultNamespace
             var money = Money;
             AddMoney(-money);
             AddMoney(money);
+            _healthText.text = Health.ToString("N0");
         }
 
         private void Update()
@@ -80,6 +87,10 @@ namespace DefaultNamespace
             if (BelowAttackThreshold(_manager.AverageHappiness)) {
                 Attack();
             }
+
+            if (Random.value <= _walkerSpawnChance) {
+                _manager.SpawnWalker();
+            }
             
             AddMoney(_moneyPerHit);
         }
@@ -87,6 +98,7 @@ namespace DefaultNamespace
         private void Attack()
         {
             Health--;
+            _healthText.text = Health.ToString("N0");
             if (Health <= 0f) {
                Debug.LogError("Game Over!");
             }

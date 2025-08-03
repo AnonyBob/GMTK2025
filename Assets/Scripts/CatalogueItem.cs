@@ -26,6 +26,9 @@ namespace DefaultNamespace
         [SerializeField]
         private RectTransform _dragTarget;
         
+        [SerializeField]
+        private RectTransform _infoAnchor;
+        
         private Vector2 _startingPositionMouse;
         private Vector2 _startingPosition;
         private Transform _originalParent;
@@ -43,6 +46,19 @@ namespace DefaultNamespace
                 }
 
                 return _catalogue;
+            }
+        }
+        
+        private InfoScreen _infoScreen;
+        private InfoScreen InfoScreen
+        {
+            get
+            {
+                if (_infoScreen == null) {
+                    _infoScreen = FindFirstObjectByType<InfoScreen>();
+                }
+
+                return _infoScreen;
             }
         }
         
@@ -71,59 +87,72 @@ namespace DefaultNamespace
             _notEnoughMoneyTransform.gameObject.SetActive(!Machine.CanAfford(_tower) && unlocked);
         }
 
+        public void SetSelected()
+        {
+            if(Machine.CheckUnlocked(_tower) && Machine.CanAfford(_tower)) {
+                Catalogue.ActivateTower(_tower);
+                InfoScreen.Hide();
+            }
+        }
+
+        public void ShowInfo()
+        {
+            InfoScreen.Show(_tower, _infoAnchor);
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnBeginDrag(eventData);
-            if (!Machine.CheckUnlocked(_tower) || !Machine.CanAfford(_tower)) {
-                return;
-            }
-
-            _dragging = true;
-            _startingPositionMouse = eventData.position;
-            _originalParent = _dragTarget.transform.parent;
-            _startingPosition = _dragTarget.anchoredPosition;
-            _dragTarget.SetParent(Catalogue.DragParent);
+            // if (!Machine.CheckUnlocked(_tower) || !Machine.CanAfford(_tower)) {
+            //     return;
+            // }
+            //
+            // _dragging = true;
+            // _startingPositionMouse = eventData.position;
+            // _originalParent = _dragTarget.transform.parent;
+            // _startingPosition = _dragTarget.anchoredPosition;
+            // _dragTarget.SetParent(Catalogue.DragParent);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnDrag(eventData);
-            if (!Machine.CheckUnlocked(_tower) || _detached || !_dragging) {
-                return;
-            }
-            
-            if(!Machine.CanAfford(_tower)) {
-                ResetDragging();
-                return;
-            }
-            
-            var delta = eventData.position - _startingPositionMouse;
-            if (delta.y > Catalogue.ActivateThreshold) {
-                Catalogue.ActivateTower(_tower);
-                _detached = true;
-                ResetDragging();
-                return;
-            }
-
-            var eventPosition = eventData.position;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                Catalogue.DragParent,
-                eventPosition,
-                eventData.pressEventCamera,
-                out Vector2 localPoint
-            );
-
-            _dragTarget.anchoredPosition = localPoint;
+            // if (!Machine.CheckUnlocked(_tower) || _detached || !_dragging) {
+            //     return;
+            // }
+            //
+            // if(!Machine.CanAfford(_tower)) {
+            //     ResetDragging();
+            //     return;
+            // }
+            //
+            // var delta = eventData.position - _startingPositionMouse;
+            // if (delta.y > Catalogue.ActivateThreshold) {
+            //     Catalogue.ActivateTower(_tower);
+            //     _detached = true;
+            //     ResetDragging();
+            //     return;
+            // }
+            //
+            // var eventPosition = eventData.position;
+            // RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            //     Catalogue.DragParent,
+            //     eventPosition,
+            //     eventData.pressEventCamera,
+            //     out Vector2 localPoint
+            // );
+            //
+            // _dragTarget.anchoredPosition = localPoint;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             GetComponentInParent<ScrollRect>().OnEndDrag(eventData);
-            if (!Machine.CheckUnlocked(_tower) || !_dragging) {
-                return;
-            }
-            
-            ResetDragging();
+            // if (!Machine.CheckUnlocked(_tower) || !_dragging) {
+            //     return;
+            // }
+            //
+            // ResetDragging();
         }
         
         private void ResetDragging()

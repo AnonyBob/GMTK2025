@@ -92,7 +92,7 @@ namespace DefaultNamespace
             }
 
             AverageHappiness = happinessSum / _walkers.Count;
-            _satisfactionText.text = (AverageHappiness / 100f).ToString("P2");
+            _satisfactionText.text = (AverageHappiness / 100f).ToString("P0");
             var readyToAttack = Machine.BelowAttackThreshold(AverageHappiness);
             _happyFace.gameObject.SetActive(!readyToAttack);
             _sadFace.gameObject.SetActive(readyToAttack);

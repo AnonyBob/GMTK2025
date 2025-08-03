@@ -1843,7 +1843,7 @@ MonoBehaviour:
   AttackThreshold: 40
   SpawnThreshold: 70
   TimeSinceHappinessUpdate: 0
-  HappinessUpdateAmount: -0.3
+  HappinessUpdateAmount: 0
   <DooberAnchor>k__BackingField: {fileID: 1995019020887254706}
   _itemAnchors:
   - {fileID: 4190987161496123349}

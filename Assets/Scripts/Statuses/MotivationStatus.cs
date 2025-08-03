@@ -2,12 +2,19 @@ using UnityEngine;
 
 namespace DefaultNamespace.Statuses
 {
+    public enum HappinessType
+    {
+        Positive,
+        Negative,
+        Neutral
+    }
+    
     [CreateAssetMenu]
     public class MotivationStatus : Status
     {
         public float WorkMultiplier = 1.2f;
         public float HappinessMultiplier = 1.1f;
-        public bool HappinessOnlyWhenPositive;
+        public HappinessType HappinessType;
         
         public override void OnAdded(Walker walker, StatusInstance instance)
         {

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DocumentStatus
   m_EditorClassIdentifier: 
   Duration: 5
-  WorkMultiplier: 2
+  WorkMultiplier: 2.5
   HappinessMultiplier: 1
+  HappinessOnlyWhenPositive: 0
