@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -29,7 +30,7 @@ namespace DefaultNamespace
 
         public void Restart()
         {
-            
+            SceneManager.LoadScene("Main");
         }
         
         public void Quit()

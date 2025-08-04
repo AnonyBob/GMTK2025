@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PoofCloud_0: -3103343936574629893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
