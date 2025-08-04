@@ -97,6 +97,10 @@ namespace DefaultNamespace
 
         public void ShowInfo()
         {
+            if (InfoScreen.CurrentTower == _tower) {
+                InfoScreen.Hide();
+                return;
+            }
             InfoScreen.Show(_tower, _infoAnchor, fromUI: true);
         }
 

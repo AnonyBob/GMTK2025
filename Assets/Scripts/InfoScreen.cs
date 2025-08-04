@@ -20,14 +20,22 @@ namespace DefaultNamespace
         [SerializeField] private TextMeshProUGUI _runCost;
         [SerializeField] private GameObject _lifeDisplay;
         [SerializeField] private TextMeshProUGUI _lifeRemaining;
+        public Tower CurrentTower { get; private set; }
+
+        private void Start()
+        {
+            Hide();
+        }
         
         public void Hide()
         {
+            CurrentTower = null;
             _panel.gameObject.SetActive(false);
         }
 
         public void Show(Tower tower, Transform anchor, bool fromUI = false)
         {
+            CurrentTower = tower;
             _title.text = tower.Stats.Name;
             _blurb.text = string.Format(tower.Stats.Blurb, tower.HappinessAmount, tower.MoneyAmount);
             

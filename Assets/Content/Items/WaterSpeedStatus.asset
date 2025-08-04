@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaterSpeedStatus
   m_EditorClassIdentifier: 
   Duration: 10
-  _speedAmount: 0.75
+  _speedAmount: 0.6

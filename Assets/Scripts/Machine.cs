@@ -31,6 +31,9 @@ namespace DefaultNamespace
 
         [SerializeField]
         private List<Tower> _towers;
+
+        [SerializeField]
+        private int _winCondition = 10000;
         
         public float Health = 100f;
         public int Money = 100;
@@ -40,6 +43,9 @@ namespace DefaultNamespace
         
         [SerializeField]
         private AnimationCurve _costToSpawnWalkerMultiplier;
+
+        [SerializeField]
+        private Animator _animator;
         
         private static Machine Instance;
         private int _highestMoney;
@@ -69,6 +75,11 @@ namespace DefaultNamespace
             _costToSpawnWalker = (int)_costToSpawnWalkerMultiplier.Evaluate(count);
             _walkerCostText.text = $"<sprite name=\"Money\"> {_costToSpawnWalker:N0}";
             _hireButton.interactable = Money >= _costToSpawnWalker;
+
+            if (Money >= _winCondition) {
+                FindAnyObjectByType<GameUI>().WinGame();
+                enabled = false;
+            }
         }
 
         private void OnDestroy()
@@ -100,10 +111,21 @@ namespace DefaultNamespace
             Health--;
             _healthText.text = Health.ToString("N0");
             if (Health <= 0f) {
-               Debug.LogError("Game Over!");
+                _animator.SetBool("Dead", true);
+                FindFirstObjectByType<GameUI>().LoseGame();
+                enabled = false;
             }
+            
+            _animator.SetTrigger("Attack");
+            CalculateDamageLevel();
         }
-        
+
+        private void CalculateDamageLevel()
+        {
+            var damageLevel = 1f - Mathf.Clamp(Health / 100f, 0f, 1f);
+            _animator.SetFloat("DamageLevel", damageLevel);
+        }
+
         public void AttemptToSpawnNewWalker()
         {
             if (_manager == null)
@@ -123,8 +145,7 @@ namespace DefaultNamespace
             Instance.Money += moneyPerHit;
             Instance._moneyText.text = $"{Instance.Money:N0}";
             
-            if(Instance.Money > Instance._highestMoney)
-            {
+            if(Instance.Money > Instance._highestMoney) {
                 Instance._highestMoney = Instance.Money;
             }
         }

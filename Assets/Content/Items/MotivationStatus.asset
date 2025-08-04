@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MotivationStatus
   m_EditorClassIdentifier: 
   Duration: 6
-  WorkMultiplier: 2
+  WorkMultiplier: 1.75
   HappinessMultiplier: 1.25
   HappinessType: 1

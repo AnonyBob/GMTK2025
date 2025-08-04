@@ -25,16 +25,18 @@ namespace DefaultNamespace
         public float ActivateThreshold { get; private set; } = 10f;
 
         private readonly List<CatalogueItem> _items = new List<CatalogueItem>();
+        private GameUI _gameUi;
 
         private void Start()
         {
             _animator.SetBool(OpenBool, false);
             _animator.Play("Close", 0, 1);
+            _gameUi = FindFirstObjectByType<GameUI>();
         }
 
         private void Update()
         {
-            if (Mouse.current.rightButton.wasPressedThisFrame) {
+            if (Mouse.current.rightButton.wasPressedThisFrame && !_gameUi.Orientation.activeInHierarchy) {
                 if (_animator.GetBool(OpenBool)) {
                     Close();
                 }
@@ -65,6 +67,7 @@ namespace DefaultNamespace
         public void Close()
         {
             _animator.SetBool(OpenBool, false);
+            FindFirstObjectByType<InfoScreen>().Hide();
         }
         
         public void CreateItem(Tower tower)
